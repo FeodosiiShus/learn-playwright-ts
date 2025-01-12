@@ -1,7 +1,7 @@
 import {defineConfig, devices, PlaywrightTestConfig} from '@playwright/test';
 
 const config : PlaywrightTestConfig = {
-  testMatch: ["tests/first-test.spec.ts"],
+  testMatch: ["tests/registration.spec.ts"],
   use: {
     headless: true,
     screenshot: 'only-on-failure'
