@@ -1,5 +1,6 @@
 import {expect, Locator, Page} from "@playwright/test";
 import {fillAndAssert} from "../helpers/fill-helper";
+import {addEmailToEmailsTxtFile} from "../helpers/email-helper";
 
 export class RegistrationPage {
     readonly page: Page;
@@ -42,6 +43,7 @@ export class RegistrationPage {
         await fillAndAssert(this.passwordInput, 'qwerty123');
         await fillAndAssert(this.confirmPasswordInput, 'qwerty123');
         await this.termsAgreementCheckbox.check();
+        addEmailToEmailsTxtFile(this.email);
     }
 
     async clickOnContinue() {
